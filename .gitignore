@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Local preview/build clutter
+node_modules/
+.wrangler/
+.cache/
+
+# Share/export packages
+*.zip
