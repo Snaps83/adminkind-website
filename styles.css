@@ -416,6 +416,60 @@ h3 {
   color: var(--coral);
 }
 
+.about-page {
+  background: var(--paper);
+}
+
+.about-page .site-header {
+  position: sticky;
+  color: var(--ink);
+  background: rgba(255, 250, 242, 0.94);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-page .brand-mark {
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.about-page .nav-links {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--line);
+}
+
+.about-page .nav-links a {
+  color: var(--muted);
+}
+
+.about-page .nav-links a:hover,
+.about-page .nav-links a[aria-current="page"] {
+  background: #edf4ef;
+  color: var(--sage-dark);
+}
+
+.about-page .nav-cta {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: center;
+  min-height: calc(100vh - 74px);
+  padding: 88px clamp(20px, 6vw, 82px);
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-hero h1 {
+  margin-bottom: 24px;
+  color: var(--ink);
+  font-size: 4.2rem;
+}
+
 .about-section {
   display: grid;
   grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
@@ -452,6 +506,18 @@ h3 {
 
 .about-copy p:last-child {
   margin-bottom: 0;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button.dark-text {
+  color: var(--ink);
+  background: #edf4ef;
 }
 
 .trust-band {
@@ -589,6 +655,10 @@ h3 {
     font-size: 4.35rem;
   }
 
+  .about-hero h1 {
+    font-size: 3.35rem;
+  }
+
   h2 {
     font-size: 3rem;
   }
@@ -603,6 +673,7 @@ h3 {
   .service-grid,
   .process-band,
   .pricing-grid,
+  .about-hero,
   .about-section,
   .trust-band,
   .contact-panel {
@@ -653,6 +724,7 @@ h3 {
 
   .section,
   .process-band,
+  .about-hero,
   .about-section,
   .trust-band {
     padding: 68px 18px;
