@@ -483,6 +483,7 @@ h3 {
 
 .about-photo {
   overflow: hidden;
+  width: min(100%, 360px);
   border-radius: 8px;
   background: var(--ink);
   box-shadow: var(--shadow);
