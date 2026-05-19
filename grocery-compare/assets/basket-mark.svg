@@ -1,0 +1,9 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">BasketCompare UK mark</title>
+  <desc id="desc">A basket icon with a price comparison tick.</desc>
+  <rect width="160" height="160" rx="32" fill="#FFFDF8"/>
+  <path d="M43 65H117L107 121H53L43 65Z" fill="#236857"/>
+  <path d="M62 65C62 47.327 70.059 36 80 36C89.941 36 98 47.327 98 65" stroke="#17202A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M62 91L75 104L101 78" stroke="#D3A946" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="43" cy="42" r="13" fill="#C85845"/>
+</svg>
