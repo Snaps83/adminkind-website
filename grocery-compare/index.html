@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A UK grocery basket comparison prototype for comparing shopping list totals across major supermarkets."
+    />
+    <title>BasketCompare UK | Grocery price comparison prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand" href="#top" aria-label="BasketCompare UK home">
+        <img src="assets/basket-mark.svg" alt="" width="42" height="42" />
+        <span>
+          <strong>BasketCompare UK</strong>
+          <small>Grocery basket comparison MVP</small>
+        </span>
+      </a>
+      <nav aria-label="App sections">
+        <a href="#compare">Compare</a>
+        <a href="#results">Results</a>
+        <a href="#data">Data status</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="workspace" id="compare" aria-labelledby="app-title">
+        <div class="workspace-copy">
+          <p class="eyebrow">UK grocery comparison prototype</p>
+          <h1 id="app-title">Compare a shopping list across major supermarkets.</h1>
+          <p>
+            Add one item or paste a full list. The app matches each line against a sample
+            grocery catalogue, compares prices by supermarket, then totals the basket.
+          </p>
+        </div>
+
+        <div class="input-panel" aria-label="Shopping list input">
+          <label for="single-item">Search or add one item</label>
+          <div class="search-row">
+            <input id="single-item" type="search" placeholder="Try bananas, milk, bread, eggs..." autocomplete="off" />
+            <button class="button primary" type="button" id="add-item-button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+              Add
+            </button>
+          </div>
+
+          <label for="shopping-list">Or paste your shopping list</label>
+          <textarea id="shopping-list" rows="8" spellcheck="false">bananas
+milk
+bread
+eggs
+chicken breast
+pasta
+tomatoes</textarea>
+
+          <div class="panel-actions">
+            <button class="button primary" type="button" id="compare-button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l3-3 3 2 5-7" /></svg>
+              Compare list
+            </button>
+            <button class="button secondary" type="button" id="clear-button">Clear</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-label="Prototype status">
+        <div>
+          <strong>9 supermarkets</strong>
+          <span>Tesco, Sainsbury's, Aldi, Lidl, Asda, Morrisons, Ocado, Waitrose, Iceland</span>
+        </div>
+        <div>
+          <strong>Sample prices</strong>
+          <span>Not live yet. Built so real APIs or approved feeds can be added later.</span>
+        </div>
+        <div>
+          <strong>Basket totals</strong>
+          <span>Shows unavailable items and comparable total by store.</span>
+        </div>
+      </section>
+
+      <section class="results-section" id="results" aria-live="polite">
+        <div class="section-heading">
+          <p class="eyebrow">Comparison results</p>
+          <h2>Your basket totals</h2>
+          <p id="result-summary">Run a comparison to see supermarket totals and item-level prices.</p>
+        </div>
+
+        <div class="totals-grid" id="totals-grid"></div>
+        <div class="results-table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr id="results-head"></tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="match-section" aria-labelledby="matches-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Item matching</p>
+          <h2 id="matches-title">Check what each shopping-list line matched to.</h2>
+        </div>
+        <div class="match-list" id="match-list"></div>
+      </section>
+
+      <section class="data-section" id="data" aria-labelledby="data-title">
+        <div>
+          <p class="eyebrow">Data status</p>
+          <h2 id="data-title">This MVP uses a structured sample catalogue.</h2>
+          <p>
+            Live supermarket prices need approved APIs, affiliate feeds, paid data providers,
+            or carefully reviewed retailer integrations. The app is deliberately built with a
+            data adapter pattern so we can replace sample prices with live sources without
+            rebuilding the interface.
+          </p>
+        </div>
+        <div class="roadmap">
+          <article>
+            <span>1</span>
+            <strong>Prototype</strong>
+            <p>Working search, matching, item comparison, and supermarket totals.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <strong>Real data source</strong>
+            <p>Connect one approved source first, then add supermarkets one by one.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <strong>Accounts and saved baskets</strong>
+            <p>Let users save weekly lists, favourite stores, and preferred pack sizes.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <template id="empty-state-template">
+      <tr>
+        <td colspan="12" class="empty-cell">No matched items yet. Add a product or compare the starter list.</td>
+      </tr>
+    </template>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
